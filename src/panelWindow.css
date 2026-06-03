@@ -1,0 +1,66 @@
+html, body {
+  margin: 0;
+  background: black;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+}
+
+.two-columns {
+  grid-template-columns: 1fr 1fr;
+}
+
+.eic-strip {
+  grid-template-columns: 1fr minmax(220px, 0.55fr) 1fr;
+}
+
+.isi {
+  align-self: center;
+  height: 70%;
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.aircraft-control {
+  position: fixed;
+  top: 8px;
+  left: 8px;
+  z-index: 10;
+  opacity: 0.18;
+  transition: opacity 140ms ease;
+}
+
+.aircraft-control:hover,
+.aircraft-control:focus-within {
+  opacity: 1;
+}
+
+#aircraft-select {
+  max-width: 180px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: white;
+  background: rgba(0, 0, 0, 0.72);
+  font: 13px system-ui, sans-serif;
+}
+
+.missing-layout {
+  display: grid;
+  width: 100vw;
+  height: 100vh;
+  place-items: center;
+  color: white;
+  background: black;
+  font: 16px system-ui, sans-serif;
+}
