@@ -1,6 +1,6 @@
 # GlassOut Client
 
-A small Tauri viewer for GlassOut panels.
+A small Tauri viewer for GlassOut panels. The app opens a launcher first so you can choose the aircraft and panel windows.
 
 ## Run
 
@@ -17,5 +17,4 @@ Each aircraft can define layouts for the Tauri windows:
 
 - `main`: currently the PFD/MFD window
 - `eic`: currently the EIC/ISI window
-
-The profile selector in the upper-left corner of each window stores the selected aircraft locally and updates the other window.
+- `mcdu`: currently the MCDU window

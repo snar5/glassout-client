@@ -10,22 +10,11 @@
     "withGlobalTauri": true,
     "windows": [
       {
-        "label": "main",
-        "title": "PFD / MFD",
-        "url": "index.html",
-        "width": 1200,
-        "height": 700,
-        "x": 0,
-        "y": 0
-      },
-      {
-        "label": "eic",
-        "title": "EIC",
-        "url": "eic.html",
-        "width": 800,
-        "height": 500,
-        "x": 1220,
-        "y": 0
+        "label": "launcher",
+        "title": "GlassOut Launcher",
+        "url": "launcher.html",
+        "width": 560,
+        "height": 520
       }
     ],
     "security": {

@@ -1,0 +1,105 @@
+:root {
+  color: #e9edf2;
+  background: #101418;
+  font: 15px system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #101418;
+}
+
+.launcher {
+  display: grid;
+  gap: 24px;
+  max-width: 560px;
+  min-height: 100vh;
+  padding: 28px;
+}
+
+h1 {
+  margin: 0 0 6px;
+  font-size: 28px;
+  font-weight: 650;
+}
+
+p {
+  margin: 0;
+  color: #9aa7b4;
+}
+
+.control-group {
+  display: grid;
+  gap: 10px;
+}
+
+label,
+.group-label {
+  color: #c9d2dc;
+  font-weight: 600;
+}
+
+select {
+  width: 100%;
+  border: 1px solid #33404d;
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: #f4f7fa;
+  background: #161d24;
+  font: inherit;
+}
+
+.panel-options {
+  display: grid;
+  gap: 8px;
+}
+
+.panel-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 44px;
+  border: 1px solid #293542;
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: #151b22;
+}
+
+.panel-option input {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+
+.status {
+  min-height: 20px;
+  color: #8fbfff;
+}
+
+footer {
+  display: flex;
+  gap: 10px;
+  align-self: end;
+  justify-content: flex-end;
+}
+
+button {
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 14px;
+  color: #071018;
+  background: #8fbfff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button.secondary {
+  color: #e9edf2;
+  background: #26313d;
+}

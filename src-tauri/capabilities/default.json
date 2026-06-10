@@ -1,8 +1,8 @@
 {
   "$schema": "../gen/schemas/desktop-schema.json",
   "identifier": "default",
-  "description": "Capability for the main window",
-  "windows": ["main", "eic"],
+  "description": "Capability for the GlassOut launcher and panel windows",
+  "windows": ["launcher", "main", "eic", "mcdu"],
   "permissions": [
     "core:default",
     "opener:default"

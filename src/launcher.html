@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+  <link rel="stylesheet" href="./launcher.css">
+  <script type="module" src="./launcher.js"></script>
+</head>
+<body>
+  <main class="launcher">
+    <header>
+      <h1>GlassOut</h1>
+      <p>Choose the aircraft and panel windows to open.</p>
+    </header>
+
+    <section class="control-group">
+      <label for="aircraft-select">Aircraft</label>
+      <select id="aircraft-select"></select>
+    </section>
+
+    <section class="control-group">
+      <div class="group-label">Panels</div>
+      <div id="panel-options" class="panel-options"></div>
+    </section>
+
+    <div id="status" class="status" role="status"></div>
+
+    <footer>
+      <button id="close-panels" type="button" class="secondary">Close Panels</button>
+      <button id="open-selected" type="button">Open Selected</button>
+    </footer>
+  </main>
+</body>
+</html>
