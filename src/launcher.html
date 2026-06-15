@@ -17,6 +17,32 @@
     </section>
 
     <section class="control-group">
+      <div class="group-label">Server</div>
+      <div class="server-grid">
+        <label>
+          <span>Scheme</span>
+          <select id="server-scheme">
+            <option value="http">http</option>
+            <option value="https">https</option>
+          </select>
+        </label>
+        <label>
+          <span>Host</span>
+          <input id="server-host" type="text" autocomplete="off">
+        </label>
+        <label>
+          <span>Port</span>
+          <input id="server-port" type="number" min="1" max="65535">
+        </label>
+      </div>
+      <div class="server-preview" id="server-preview"></div>
+      <div class="settings-actions">
+        <button id="reset-settings" type="button" class="secondary">Reset Defaults</button>
+        <button id="save-settings" type="button" class="secondary">Save Settings</button>
+      </div>
+    </section>
+
+    <section class="control-group">
       <div class="group-label">Panels</div>
       <div id="panel-options" class="panel-options"></div>
     </section>

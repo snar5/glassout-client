@@ -1,5 +1,9 @@
-export const glassoutConfig = {
-  serverBaseUrl: "http://192.168.1.232:8787",
+export const defaultGlassoutSettings = {
+  server: {
+    scheme: "http",
+    host: "192.168.1.232",
+    port: 8787
+  },
   defaultAircraft: "crj700",
   aircraft: {
     crj700: {
@@ -30,3 +34,5 @@ export const glassoutConfig = {
     }
   }
 };
+
+export const glassoutConfig = defaultGlassoutSettings;

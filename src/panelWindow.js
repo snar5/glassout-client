@@ -1,18 +1,23 @@
-import { glassoutConfig } from "./aircraftProfiles.js";
+import {
+  getServerBaseUrl,
+  loadGlassoutSettings,
+  settingsChangedKey
+} from "./settings.js";
 
 const activeAircraftKey = "glassout.activeAircraft";
 const channel = "BroadcastChannel" in window
   ? new BroadcastChannel("glassout.aircraft")
   : null;
+let glassoutSettings = loadGlassoutSettings();
 
 function getActiveAircraftId() {
   const stored = localStorage.getItem(activeAircraftKey);
 
-  if (stored && glassoutConfig.aircraft[stored]) {
+  if (stored && glassoutSettings.aircraft[stored]) {
     return stored;
   }
 
-  return glassoutConfig.defaultAircraft;
+  return glassoutSettings.defaultAircraft;
 }
 
 function setActiveAircraftId(aircraftId) {
@@ -26,7 +31,7 @@ function resolvePanelUrl(panel) {
     return panel.url;
   }
 
-  return `${glassoutConfig.serverBaseUrl}${panel.path}`;
+  return `${getServerBaseUrl(glassoutSettings)}${panel.path}`;
 }
 
 function renderSwitcher(activeAircraftId) {
@@ -38,7 +43,7 @@ function renderSwitcher(activeAircraftId) {
 
   switcher.innerHTML = "";
 
-  for (const [aircraftId, aircraft] of Object.entries(glassoutConfig.aircraft)) {
+  for (const [aircraftId, aircraft] of Object.entries(glassoutSettings.aircraft)) {
     const option = document.createElement("option");
     option.value = aircraftId;
     option.textContent = aircraft.name;
@@ -79,7 +84,7 @@ function renderMissingLayout(aircraft, windowName) {
 function render() {
   const windowName = document.body.dataset.window;
   const activeAircraftId = getActiveAircraftId();
-  const aircraft = glassoutConfig.aircraft[activeAircraftId];
+  const aircraft = glassoutSettings.aircraft[activeAircraftId];
   const windowConfig = aircraft.windows[windowName];
 
   renderSwitcher(activeAircraftId);
@@ -97,7 +102,8 @@ document.querySelector("#aircraft-select")?.addEventListener("change", (event) =
 });
 
 window.addEventListener("storage", (event) => {
-  if (event.key === activeAircraftKey) {
+  if (event.key === activeAircraftKey || event.key === settingsChangedKey) {
+    glassoutSettings = loadGlassoutSettings();
     render();
   }
 });

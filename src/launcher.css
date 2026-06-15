@@ -54,6 +54,43 @@ select {
   font: inherit;
 }
 
+input {
+  width: 100%;
+  border: 1px solid #33404d;
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: #f4f7fa;
+  background: #161d24;
+  font: inherit;
+}
+
+.server-grid {
+  display: grid;
+  grid-template-columns: 0.8fr 1.6fr 0.8fr;
+  gap: 10px;
+}
+
+.server-grid label {
+  display: grid;
+  gap: 6px;
+  color: #9aa7b4;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.server-preview {
+  min-height: 20px;
+  color: #8fbfff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  overflow-wrap: anywhere;
+}
+
+.settings-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
 .panel-options {
   display: grid;
   gap: 8px;
